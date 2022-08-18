@@ -18,5 +18,15 @@ public class ProjectInstaller : MonoInstaller
         Container.Bind<IOperator>()
             .FromInstance(DivSingleton.Instance)
             .WhenInjectedInto<UserOfDiv>();
+
+        //For Example 4: 乘法 memory pool & Factory
+        Container.BindFactory<int, Mut, Mut.Factory>()
+            .FromMonoPoolableMemoryPool(
+            (x) =>
+            {
+                x.WithInitialSize(10) // 指定pool 的起始size
+                .ExpandByDoubling() // 指定Object 超過Size後怎麼擴展
+                .FromNewComponentOnNewGameObject();
+            });
     }
 }

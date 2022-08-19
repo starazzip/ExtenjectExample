@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using Zenject;
-namespace Assets.Example5
+namespace Example5
 {
     public class AttackEvent { }
     public class A

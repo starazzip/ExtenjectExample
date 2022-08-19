@@ -1,14 +1,15 @@
-using Assets.Example5;
 using Zenject;
-
-public class Example5Installer : MonoInstaller
+namespace Example5
 {
-    public override void InstallBindings()
+    public class Example5Installer : MonoInstaller
     {
-        SignalBusInstaller.Install(Container);
-        Container.DeclareSignal<AttackEvent>();
-        Container.BindInterfacesAndSelfTo<B>().AsSingle().NonLazy();
-        Container.Bind<Main>().FromComponentInHierarchy().AsCached();
-        Container.Bind<A>().AsSingle();
+        public override void InstallBindings()
+        {
+            SignalBusInstaller.Install(Container);
+            Container.DeclareSignal<AttackEvent>();
+            Container.BindInterfacesAndSelfTo<B>().AsSingle().NonLazy();
+            Container.Bind<Main5>().FromComponentInHierarchy().AsCached();
+            Container.Bind<A>().AsSingle();
+        }
     }
 }

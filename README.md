@@ -7,7 +7,7 @@
 
 
 ## Example4 Factory 和 Memory Pool
-簡單的工廠以及MemoryPool(Object)範例
+簡單的工廠以及MemoryPool(ObjectPool)範例
 
 
 
